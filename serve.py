@@ -7,9 +7,8 @@
 Đường dẫn giống hệt GitHub Pages: mỗi thư mục con có src/ (english_study,
 xuexi_hanyu…) được serve ở /<tên thư mục>/, ví dụ
 http://localhost:8000/xuexi_hanyu/ là xuexi_hanyu/src/. Trang gốc / là
-index.html nằm ngay trong thư mục này (mục lục); link
-https://<user>.github.io/<site>/ trong các file HTML được đổi thành /<site>/
-để bấm vẫn ở lại máy mình.
+index.html nằm ngay trong thư mục này (mục lục). Workflow Pages gom file theo
+đúng sơ đồ này, nên link tương đối chạy y hệt trên máy lẫn trên site.
 
 `python -m http.server` không gửi Cache-Control, nên trình duyệt tự đoán thời hạn
 cache theo Last-Modified: sửa xong một file thì trang trộn HTML cũ với CSS/JS mới.
@@ -18,9 +17,7 @@ file không đổi thì server trả 304 nên vẫn nhanh.
 """
 import argparse
 import http.server
-import io
 import posixpath
-import re
 import socket
 import sys
 import urllib.parse
@@ -37,10 +34,6 @@ def find_sites():
 
 
 SITES = find_sites()
-# https://abc.github.io/english_study/... -> /english_study/...
-PAGES_LINK = re.compile(
-    r"https://[\w-]+\.github\.io/(?=(?:%s)(?:/|[\"'#?]))" % "|".join(map(re.escape, SITES))
-) if SITES else None
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -58,25 +51,6 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             base = ROOT  # trang gốc: index.html (mục lục) ngay trong thư mục này
         full = base.joinpath(*parts) if parts else base
         return str(full) + ("/" if trailing else "")
-
-    def send_head(self):
-        raw = self.translate_path(self.path)
-        path = Path(raw)
-        if raw.endswith("/") and (path / "index.html").is_file():
-            path = path / "index.html"
-        if PAGES_LINK is None or path.suffix.lower() not in (".html", ".htm") or not path.is_file():
-            return super().send_head()
-        # HTML: đổi link github.io sang local. Gửi thẳng 200 (file nhỏ, bỏ qua 304).
-        try:
-            text = path.read_text(encoding="utf-8")
-        except (OSError, UnicodeDecodeError):
-            return super().send_head()
-        body = PAGES_LINK.sub("/", text).encode("utf-8")
-        self.send_response(200)
-        self.send_header("Content-Type", "text/html; charset=utf-8")
-        self.send_header("Content-Length", str(len(body)))
-        self.end_headers()
-        return io.BytesIO(body)
 
 
 class Server(http.server.ThreadingHTTPServer):
