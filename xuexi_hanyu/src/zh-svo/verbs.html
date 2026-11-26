@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Động từ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="field" aria-hidden="true"></canvas>
+
+<div class="wrap">
+  <nav class="pagenav" aria-label="Các trang">
+    <a href="index.html">Mục lục</a>
+    <a href="verbs.html" aria-current="page">Động từ</a>
+    <a href="grammar.html">Theo ngữ pháp</a>
+    <a href="dialogue.html">Hội thoại</a>
+    <a href="reference.html">Bảng tra nhãn</a>
+  </nav>
+  <header>
+    <p class="eyebrow">Phân tích câu tiếng Trung · 01</p>
+    <h1><i><span data-stat="verbs"></span> động từ</i> — động từ quyết định câu cần gì</h1>
+    <p class="lede">Động từ là trung tâm của câu: nó mở ra chỗ cho chủ ngữ, tân ngữ, bổ ngữ, và câu dài ngắn thế nào
+      là do nó đòi. 50 động từ cơ bản HSK1 chia năm nhóm theo công dụng, thêm <span data-stat="verbs" data-minus="50"></span> động từ thông dụng HSK2–4
+      xếp nhóm theo cấp.
+      Chọn một nhóm rồi một từ ở bảng phía trên; hàng chấm trên câu
+      lật sang câu thứ hai của nó. Bấm vào một từ trong câu để xem pinyin, nghĩa và chức vụ.</p>
+  </header>
+
+  <div class="board top">
+    <nav class="verbs" id="chips" role="tablist" aria-label="Chọn câu"></nav>
+
+    <div class="mid">
+      <div class="ribbon">
+        <div class="rib-head">
+          <h2>Câu chia theo chức vụ</h2>
+          <div class="pager" id="pager" hidden></div>
+        </div>
+        <div class="rib-line" id="ribbon"></div>
+        <div class="sline"><span class="spk" id="spk" hidden></span><p class="spy" id="spy"></p></div>
+        <p class="vi" id="vi"></p>
+        <p class="snote" id="snote" hidden></p>
+      </div>
+
+      <aside class="panel" id="panel" hidden>
+        <h2 id="panel-title">Chi tiết</h2>
+        <div id="panel-body"></div>
+      </aside>
+
+      <div class="legend">
+        <span><i class="sw s"></i> chủ ngữ</span>
+        <span><i class="sw v"></i> vị ngữ</span>
+        <span><i class="sw o"></i> tân ngữ</span>
+        <span><i class="sw c"></i> bổ ngữ</span>
+        <span><i class="sw m"></i> định ngữ, trạng ngữ, trợ từ</span>
+        <span><i class="sw dash"></i> gạch đứt = tùy ý, bỏ được</span>
+      </div>
+
+      <div class="exbar" id="exbar" hidden>
+        <h2 id="exbar-t"></h2>
+        <div class="exrows" id="exrows"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    Phân tích theo lối ngữ pháp dạy tiếng Trung quen thuộc: <span lang="zh">主语</span> chủ ngữ ·
+    <span lang="zh">谓语</span> vị ngữ · <span lang="zh">宾语</span> tân ngữ · <span lang="zh">补语</span> bổ ngữ ·
+    <span lang="zh">定语</span> định ngữ · <span lang="zh">状语</span> trạng ngữ. Câu được tách từ và gán nhãn tự động
+    bằng luật: đúng với phần lớn câu ngắn trình độ HSK1, câu dài nhiều vế thì chỉ là gần đúng. Pinyin lấy từ chính
+    câu nên giữ đúng biến điệu.
+  </footer>
+</div>
+
+<script src="field.js"></script>
+<script src="../hanyu/hanyu.js"></script>
+<script src="../hanyu/hanyu-syntax.js"></script>
+<script src="data.js"></script>
+<script>ZhSvo.boot(d => ({SVO_VERBS: d.verbs}), {start: 0});</script>
+</body>
+</html>

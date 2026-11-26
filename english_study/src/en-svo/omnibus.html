@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Động từ đặc biệt</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="field" aria-hidden="true"></canvas>
+
+<div class="wrap">
+  <nav class="pagenav" aria-label="Các trang">
+    <a href="index.html">Mục lục</a>
+    <a href="omnibus.html" aria-current="page">Động từ đặc biệt</a>
+    <a href="topics.html">Theo ngữ nghĩa</a>
+    <a href="reference.html">Bảng tra nhãn</a>
+  </nav>
+  <header>
+    <p class="eyebrow">Phân tích câu tiếng Anh · 01</p>
+    <h1><i>Động từ đặc biệt</i> — 21 từ gánh hàng chục nghĩa</h1>
+    <p class="lede">Gom vào đây những động từ <strong>lệch khỏi lối thường</strong>, theo hai kiểu. Kiểu thứ nhất rỗng nghĩa: nghĩa rời khỏi động từ mà dồn vào danh từ đứng sau — <i>have a look</i> thật ra chỉ là <i>look</i>. Kiểu thứ hai làm <strong>động từ nối</strong>: không có tân ngữ nào, chỉ bắc một nhịp sang thứ nói về chủ ngữ — <i>go sour</i>, <i>come true</i>, <i>get cold</i>. Nhiều từ làm được cả hai. Chọn một từ ở thanh bên để xem câu mẫu chia theo chức vụ; thanh lật câu đi qua những khung còn lại của chính từ đó, và phần dưới mở ra trọn sức chứa của nó: cách dùng, phrasal verb, thành ngữ.</p>
+  </header>
+
+  <div class="board">
+    <nav class="verbs" id="chips" role="tablist" aria-label="Chọn động từ"></nav>
+
+    <div class="mid">
+      <div class="ribbon">
+        <h2>Câu chia theo chức vụ</h2>
+        <div class="pager" id="pager" hidden></div>
+        <div class="rib-line" id="ribbon"></div>
+        <p class="vi" id="vi"></p>
+        <p class="snote" id="snote" hidden></p>
+
+        <section class="omni">
+          <h3>Một từ gánh được những gì</h3>
+          <p class="sub">Đây là toàn bộ sức chứa của động từ đang chọn: nghĩa nào, khung nào, đi với giới từ nào. Phần này đi theo thanh bên, không phải chọn lại lần nữa.</p>
+          <div class="obody" id="obody"></div>
+        </section>
+      </div>
+
+      <div class="legend">
+        <span><i class="sw s"></i> chủ ngữ</span>
+        <span><i class="sw v"></i> động từ</span>
+        <span><i class="sw o"></i> tân ngữ</span>
+        <span><i class="sw c"></i> bổ ngữ</span>
+        <span><i class="sw m"></i> từ phụ</span>
+        <span><i class="sw dash"></i> gạch đứt = tùy ý, bỏ được</span>
+      </div>
+
+
+
+    </div>
+
+  </div>
+  <footer>
+    Phân tích theo lối ngữ pháp trường học (subject – verb – object – complement – modifier), hợp cho người học.
+    Ranh giới bổ ngữ / bổ nghĩa đôi khi còn tranh cãi ngay trong giới ngôn ngữ học — phép thử thực dụng là bỏ thử
+    ra xem câu còn đúng không. Máy phân tích câu dùng hệ nhãn khác, chi tiết hơn: chuẩn Universal Dependencies với
+    <code>nsubj</code>, <code>obj</code>, <code>xcomp</code>, <code>obl</code>, <code>amod</code>.
+    <br><br>Toàn bộ câu trên trang này được chú giải <strong>bằng tay</strong>, nên đọc được là tin được.  </footer>
+</div>
+
+<script src="field.js"></script>
+<script src="verbs-data.js"></script>
+<script src="omni-data.js"></script>
+<script>window.SVO_PAGE = {start:3};</script>
+<script src="svo.js"></script>
+</body>
+</html>

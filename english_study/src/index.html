@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Học tiếng Anh</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+  /* Tông noir như các trang bên dưới, không đổi theo sáng/tối của máy. */
+  :root{
+    --bg:#050608; --panel:#0C0E11; --panel2:#161B20; --ink:#EDEBE6; --muted:#8B9098; --line:#1E242A;
+    --en:#3ED9C9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.55 "Google Sans", system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px; margin:0 auto; padding:48px 16px 64px}
+  .eyebrow{margin:0 0 10px; color:var(--muted); font:500 11.5px "Google Sans", "Segoe UI", system-ui, sans-serif; letter-spacing:.14em; text-transform:uppercase}
+  h1{margin:0 0 14px; font:600 clamp(30px, 5vw, 50px)/1.08 "Google Sans", "Segoe UI", system-ui, -apple-system, sans-serif; letter-spacing:-.015em}
+  h1 em{font-style:normal; color:var(--k)}
+  .lede{margin:0 0 36px; max-width:760px; color:var(--muted); font-size:16px}
+  h2{margin:36px 0 12px; font:500 11px "Google Sans", "Segoe UI", system-ui, sans-serif; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1px; background:var(--line); border:1px solid var(--line)}
+  a.card{display:block; padding:18px 18px 20px; background:var(--panel); color:inherit; text-decoration:none; transition:background .12s}
+  a.card:hover{background:var(--panel2)}
+  a.card:focus-visible{outline:2px solid var(--k); outline-offset:-2px}
+  .en{--k:var(--en)}
+  .card .n{display:block; margin-bottom:8px; color:var(--k); font:500 10.5px "Google Sans", "Segoe UI", system-ui, sans-serif; letter-spacing:.12em; text-transform:uppercase}
+  .card h3{margin:0 0 4px; font:600 21px/1.2 "Google Sans", "Segoe UI", system-ui, -apple-system, sans-serif; color:var(--k)}
+  .card .tag{margin:0 0 10px; color:var(--ink); font-size:13.5px}
+  .card p{margin:0; color:var(--muted); font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap en">
+  <p class="eyebrow">Học tiếng Anh · <span lang="en">English</span></p>
+  <h1>Học <em>tiếng Anh</em> qua cấu trúc câu</h1>
+  <p class="lede">Ba cách nhìn một câu: chia nó theo chức vụ để thấy thành phần nào động từ đòi, thành phần nào tháo ra được; tách nó thành khối để thấy câu được ráp từ những cụm nào; và luyện nói theo từng khối. Và một trang nữa để rèn phản xạ nói, bỏ thói quen dịch trong đầu.</p>
+
+  <h2>Các trang</h2>
+  <div class="grid">
+    <a class="card en" href="en-svo/index.html">
+      <span class="n">en-svo · chức vụ câu</span>
+      <h3>Phân tích câu tiếng Anh</h3>
+      <p class="tag">Chủ ngữ, động từ, tân ngữ, bổ ngữ — và phần tháo ra được</p>
+      <p>Câu mẫu tiếng Anh chia theo chức vụ: động từ đặc biệt, nhóm theo ngữ nghĩa và bảng tra nhãn.</p>
+    </a>
+    <a class="card en" href="en-chunks/index.html">
+      <span class="n">en-chunks · khối từ</span>
+      <h3>Học tiếng Anh theo khối</h3>
+      <p class="tag">Nói theo khối, không theo từng từ</p>
+      <p>Khoảng 1270 khối tiếng Anh thông dụng, xếp theo thứ tự học. Mỗi câu ví dụ tách thành khối, so số từ với số khối.</p>
+    </a>
+    <a class="card en" href="en-matrix/index.html">
+      <span class="n">en-matrix · luyện nói</span>
+      <h3>Ma trận nói tiếng Anh</h3>
+      <p class="tag">Nói từng khối, nối thành câu, kéo thành đoạn</p>
+      <p>Khoảng 2900 câu luyện nói từ bộ Speaking Matrix (Zero, 30 giây, 1–3 phút), ngắt sẵn thành khối kèm nghĩa tiếng Việt từng khối.</p>
+    </a>
+    <a class="card en" href="en-speak/index.html">
+      <span class="n">en-speak · phản xạ nói</span>
+      <h3>Nói không qua dịch</h3>
+      <p class="tag">Nghĩ gì nói nấy, bỏ bước dịch trong đầu</p>
+      <p>Thần chú, năm nguyên tắc, và hai danh sách mở sẵn: độc thoại, và ngân hàng ý (ý → cách nói theo khối).</p>
+    </a>
+  </div>
+
+</div>
+</body>
+</html>

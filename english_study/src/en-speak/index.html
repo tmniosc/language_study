@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nói không qua dịch</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="field" aria-hidden="true"></canvas>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow"><a href="../index.html">Học tiếng Anh</a> · phản xạ nói</p>
+    <h1>Nghĩ gì <em>nói nấy</em> — không <i>dịch trong đầu</i></h1>
+    <p class="lede">Bạn không thiếu từ vựng. Bạn kẹt ở <strong>khâu dịch</strong>: nghĩ bằng tiếng Việt →
+      dịch → mới nói. Người nói trôi chảy bỏ hẳn hai bước đầu. Trang này không dạy thêm từ; nó rèn cái
+      <em>phản xạ</em> nói thẳng ra — bằng thần chú, năm nguyên tắc, và hai danh sách để tự nói mỗi ngày.</p>
+    <details class="howto">
+      <summary>Cách dùng trang này</summary>
+      <ul>
+        <li><strong>Độc thoại</strong>: nhìn một gợi ý, tự thuật bằng tiếng Anh — ra lời hoặc thì thầm. Sai cũng kệ,
+          cứ nói liền mạch; bí từ thì nói vòng, đừng dừng lại dịch.</li>
+        <li><strong>Diễn đạt ý</strong>: nhìn một <em>ý muốn nói</em>, tự nói <em>cách của bạn</em> trước, rồi đối
+          chiếu các cách nói mẫu. Với lấy nguyên khối, đừng dịch từng chữ.</li>
+      </ul>
+    </details>
+  </header>
+
+  <!-- ---- Thần chú ---- -->
+  <section class="block" aria-labelledby="h-mantra">
+    <h2 id="h-mantra" class="blockh">Thần chú <span class="sub">đọc trước mỗi lần tập</span></h2>
+    <ol class="mantras">
+      <li class="c0"><span class="num">01</span><b>Đừng dịch — nghĩ thẳng.</b><em lang="en">Don't translate — think.</em></li>
+      <li class="c5"><span class="num">02</span><b>Trôi trước, đúng sau.</b><em lang="en">Flow first, correct later.</em></li>
+      <li class="c3"><span class="num">03</span><b>Nói cụm, đừng ghép từ.</b><em lang="en">Speak in chunks, not words.</em></li>
+      <li class="c4"><span class="num">04</span><b>Nghe gấp đôi nói.</b><em lang="en">Listen more than you talk.</em></li>
+      <li class="c2"><span class="num">05</span><b>Đo bằng tháng, không đo bằng ngày.</b><em lang="en">It's flight hours, not a grade.</em></li>
+    </ol>
+  </section>
+
+  <!-- ---- Năm nguyên tắc ---- -->
+  <section class="block" aria-labelledby="h-principle">
+    <h2 id="h-principle" class="blockh">Năm nguyên tắc <span class="sub">vì sao làm vậy</span></h2>
+    <ol class="plist">
+      <li>
+        <h3>Hạ chuẩn xuống</h3>
+        <p>Bạn khựng vì muốn nói đúng và hay. Cho phép mình nói tiếng Anh "xấu": câu cụt, lặp từ. Sự trôi chảy
+          đến trước, sự chính xác đến sau — không bao giờ ngược lại.</p>
+      </li>
+      <li>
+        <h3>Học theo cụm</h3>
+        <p>Phải dịch là vì bạn ráp câu từng từ. Người trôi chảy gọi ra nguyên khối. Trí nhớ làm việc chỉ giữ
+          ~7 đơn vị một lúc; khối càng lớn, câu càng trôi.</p>
+      </li>
+      <li>
+        <h3>Độc thoại nội tâm</h3>
+        <p>Trong ngày, tự thuật việc đang làm bằng tiếng Anh, chỉ trong đầu. Không ai nghe nên không sợ sai —
+          não quen nghĩ thẳng, bước dịch tự mờ đi.</p>
+      </li>
+      <li>
+        <h3>Shadowing</h3>
+        <p>Mở video người bản xứ, nói nhại lại ngay sau họ 1–2 giây, bắt chước cả ngữ điệu. Không kịp dịch →
+          buộc não bỏ qua tiếng Việt, và miệng quen nhịp tiếng Anh.</p>
+      </li>
+      <li>
+        <h3>Input nhiều hơn output</h3>
+        <p>"Không biết nói thế nào" thường là chưa nghe đủ. Nghe nhiều thứ bạn thích và hiểu ~80%. Mẫu câu nghe
+          đủ nhiều sẽ tự bật ra, không cần dịch.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ---- Độc thoại ---- -->
+  <section class="block" aria-labelledby="h-self">
+    <h2 id="h-self" class="blockh">Độc thoại <span class="sub">tự thuật bằng tiếng Anh, không ai nghe</span></h2>
+    <ol id="selftalkList" class="slist"></ol>
+  </section>
+
+  <!-- ---- Ngân hàng ý ---- -->
+  <section class="block" aria-labelledby="h-bank">
+    <h2 id="h-bank" class="blockh">Ngân hàng ý <span class="sub">có ý này — nói vầy</span></h2>
+    <ol id="intentBank" class="bank"></ol>
+  </section>
+
+  <footer>
+    Soạn từ một buổi trò chuyện về việc nói tiếng Anh mà không dịch trong đầu. Nội dung tự rèn, không phải sách.
+    Bộ bài tập luyện câu đầy đủ nằm ở <a href="../en-matrix/index.html">en-matrix</a> và
+    <a href="../en-chunks/index.html">en-chunks</a>.
+  </footer>
+</div>
+
+<script src="field.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
