@@ -22,9 +22,10 @@
       <summary>Cách dùng trang này</summary>
       <ul>
         <li><strong>Độc thoại</strong>: nhìn một gợi ý, tự thuật bằng tiếng Anh — ra lời hoặc thì thầm. Sai cũng kệ,
-          cứ nói liền mạch; bí từ thì nói vòng, đừng dừng lại dịch.</li>
-        <li><strong>Diễn đạt ý</strong>: nhìn một <em>ý muốn nói</em>, tự nói <em>cách của bạn</em> trước, rồi đối
-          chiếu các cách nói mẫu. Với lấy nguyên khối, đừng dịch từng chữ.</li>
+          cứ nói liền mạch; bí từ thì nói vòng, đừng dừng lại dịch. Nói xong mới bấm vào gợi ý để xem
+          <em>đoạn mẫu</em>: nhặt lấy vài khối tô đậm, rồi nói lại lần nữa có dùng chúng.</li>
+        <li><strong>Ngân hàng ý</strong>: nhìn một <em>ý muốn nói</em>, tự nói <em>cách của bạn</em> trước, rồi bấm
+          vào để đối chiếu các cách nói mẫu. Với lấy nguyên khối, đừng dịch từng chữ.</li>
       </ul>
     </details>
   </header>
@@ -75,13 +76,19 @@
 
   <!-- ---- Độc thoại ---- -->
   <section class="block" aria-labelledby="h-self">
-    <h2 id="h-self" class="blockh">Độc thoại <span class="sub">tự thuật bằng tiếng Anh, không ai nghe</span></h2>
+    <div class="blockbar">
+      <h2 id="h-self" class="blockh">Độc thoại <span class="sub">tự nói trước, rồi bấm vào để xem đoạn mẫu</span></h2>
+      <button type="button" class="toggleall" data-toggle="selftalkList" aria-pressed="false">Mở hết</button>
+    </div>
     <ol id="selftalkList" class="slist"></ol>
   </section>
 
   <!-- ---- Ngân hàng ý ---- -->
   <section class="block" aria-labelledby="h-bank">
-    <h2 id="h-bank" class="blockh">Ngân hàng ý <span class="sub">có ý này — nói vầy</span></h2>
+    <div class="blockbar">
+      <h2 id="h-bank" class="blockh">Ngân hàng ý <span class="sub">có ý này — bấm vào để xem cách nói</span></h2>
+      <button type="button" class="toggleall" data-toggle="intentBank" aria-pressed="false">Mở hết</button>
+    </div>
     <ol id="intentBank" class="bank"></ol>
   </section>
 

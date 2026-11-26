@@ -8,7 +8,7 @@ Bốn trang học tiếng Anh. Toàn bộ là file tĩnh (HTML, CSS, JS, JSON), 
 | `en-svo` | Câu tiếng Anh chia theo chức vụ (S/V/O/C…): động từ đặc biệt, nhóm theo ngữ nghĩa, bảng tra nhãn |
 | `en-chunks` | ~1270 khối (cụm từ) tiếng Anh thông dụng, mỗi câu ví dụ tách thành khối |
 | `en-matrix` | ~2900 câu luyện nói từ bộ Speaking Matrix, ngắt khối kèm nghĩa tiếng Việt |
-| `en-speak` | Rèn phản xạ nói: thần chú, năm nguyên tắc, danh sách độc thoại, ngân hàng ý (ý → cách nói theo khối) |
+| `en-speak` | Rèn phản xạ nói: thần chú, năm nguyên tắc, 32 gợi ý độc thoại kèm đoạn mẫu, ngân hàng ý (ý → cách nói theo khối); bấm vào mới hiện mẫu |
 
 ## Cấu trúc
 
@@ -17,7 +17,7 @@ src/            cả site, đăng nguyên thư mục này
   index.html            trang mục lục
   en-svo/, en-chunks/   đồ thị câu, khối từ (en-chunks đọc chunks.json)
   en-matrix/            luyện nói Speaking Matrix: data.json (dựng từ epub), vi.json (nghĩa tiếng Việt)
-  en-speak/             rèn phản xạ nói: data.js (gợi ý độc thoại + ý→khối), hiện thẳng trong trang
+  en-speak/             rèn phản xạ nói: data.js (gợi ý độc thoại + đoạn mẫu, ý→khối), bấm để sổ ra
 tools/
   speaking-matrix.py    dựng src/en-matrix/data.json từ năm cuốn epub Speaking Matrix (Python 3)
 ```
