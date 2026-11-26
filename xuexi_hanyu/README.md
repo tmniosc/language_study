@@ -1,7 +1,7 @@
 # Học tiếng Trung
 
 Hai trang học tiếng Trung. Toàn bộ là file tĩnh (HTML, CSS, JS, JSON), không có backend, không có bước dựng;
-đăng trên GitHub Pages: https://tmn281196.github.io/xuexi_hanyu/
+đăng trên GitHub Pages cùng repo cha `language_study`, ở thư mục con `xuexi_hanyu/` của site.
 
 | Trang | Nội dung |
 |---|---|
@@ -40,7 +40,8 @@ trộn HTML cũ với CSS/JS mới.
 
 ## Đăng lên GitHub Pages
 
-Đẩy lên nhánh `main` là xong: `.github/workflows/pages.yml` đăng nguyên `src/`.
+Thư mục này nằm trong repo `language_study`. Đẩy repo đó lên nhánh `main` là xong: workflow ở
+`../.github/workflows/pages.yml` đăng `src/` của thư mục này thành `xuexi_hanyu/` trên site.
 
 ## Sửa nội dung
 

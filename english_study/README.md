@@ -1,7 +1,7 @@
 # Học tiếng Anh
 
 Bốn trang học tiếng Anh. Toàn bộ là file tĩnh (HTML, CSS, JS, JSON), không có backend, không có bước dựng;
-đăng trên GitHub Pages: https://tmn281196.github.io/english_study/
+đăng trên GitHub Pages cùng repo cha `language_study`, ở thư mục con `english_study/` của site.
 
 | Trang | Nội dung |
 |---|---|
@@ -35,7 +35,8 @@ rồi vào http://localhost:8000/english_study/ (cổng bận thì tự lấy c�
 
 ## Đăng lên GitHub Pages
 
-Đẩy lên nhánh `main` là xong: `.github/workflows/pages.yml` đăng nguyên `src/`.
+Thư mục này nằm trong repo `language_study`. Đẩy repo đó lên nhánh `main` là xong: workflow ở
+`../.github/workflows/pages.yml` đăng `src/` của thư mục này thành `english_study/` trên site.
 
 ## Sửa nội dung
 
