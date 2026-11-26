@@ -57,15 +57,7 @@ h1 i{font-style:normal; color:var(--muted); text-decoration:line-through; text-d
 .plist p{margin:0; color:var(--muted); font-size:14px; line-height:1.5; max-width:760px}
 @media (min-width:720px){.plist li{grid-template-columns:210px 1fr; align-items:baseline}}
 
-/* nút Mở hết / Gập hết, nằm cuối dòng tiêu đề mục */
-.blockbar{display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px; margin:0 0 14px}
-.blockbar .blockh{margin:0}
-.toggleall{margin-left:auto; background:none; border:1px solid var(--line); color:var(--muted); cursor:pointer;
-  padding:4px 10px; font:500 11px "Google Sans", sans-serif; letter-spacing:.1em; text-transform:uppercase}
-.toggleall:hover{color:var(--ink); border-color:var(--muted)}
-.toggleall:focus-visible{outline:2px solid var(--en); outline-offset:2px}
-
-/* ---- hai danh sách bấm-để-sổ: mỗi dòng một <details> ---- */
+/* ---- hai danh sách bấm-để-sổ: mỗi dòng một <details>, mở cái này thì cái khác đóng ---- */
 .slist, .bank{list-style:none; margin:0; padding:0; display:grid; gap:1px; background:var(--line); border:1px solid var(--line)}
 .slist{counter-reset:s}
 .slist > li, .bank > li{background:var(--panel)}

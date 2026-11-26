@@ -47,23 +47,16 @@
     ).join("");
   }
 
-  // Nút "Mở hết / Gập hết" của từng mục.
-  document.querySelectorAll("[data-toggle]").forEach(btn => {
-    const list = document.getElementById(btn.dataset.toggle);
+  // Mỗi danh sách chỉ mở một mục: mở mục này thì đóng các mục còn lại. Mục đóng phía trên
+  // làm trang co lại, nên kéo mục vừa mở vào khung nhìn nếu nó trôi lên quá mép trên.
+  [self, bank].forEach(list => {
     if(!list) return;
-    const sync = () => {
-      const all = list.querySelectorAll("details"), open = list.querySelectorAll("details[open]");
-      const full = all.length > 0 && open.length === all.length;
-      btn.textContent = full ? "Gập hết" : "Mở hết";
-      btn.setAttribute("aria-pressed", full ? "true" : "false");
-    };
-    btn.addEventListener("click", () => {
-      const all = list.querySelectorAll("details");
-      const full = list.querySelectorAll("details[open]").length === all.length;
-      all.forEach(d => { d.open = !full; });
-      sync();
-    });
-    list.addEventListener("toggle", sync, true);
-    sync();
+    list.addEventListener("toggle", e => {
+      const d = e.target;
+      if(!(d instanceof HTMLDetailsElement) || !d.open) return;
+      list.querySelectorAll("details[open]").forEach(o => { if(o !== d) o.open = false; });
+      const top = d.getBoundingClientRect().top;
+      if(top < 0) d.scrollIntoView({block: "start"});
+    }, true);
   });
 })();
