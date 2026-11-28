@@ -35,6 +35,15 @@ jobs:
           done
           touch _site/.nojekyll
           ls -la _site
+      # Pages cho trình duyệt giữ file 10 phút. Gắn mã commit vào mọi link .js/.css nội bộ
+      # trong HTML (src="app.js" -> src="app.js?v=abc1234") để mỗi lần đăng là trình duyệt
+      # tải bản mới ngay. Link ngoài (có "://") và link đã có "?" thì để nguyên.
+      - name: Gắn phiên bản vào link JS/CSS
+        run: |
+          v="${GITHUB_SHA::7}"
+          find _site -name '*.html' -exec sed -i -E \
+            "s#((src|href)=\"[^\":?]+\.(js|css))\"#\1?v=$v\"#g" {} +
+          grep -rhoE '(src|href)="[^"]+\?v=[^"]+"' _site --include='*.html' | sort | uniq -c | head -20
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
