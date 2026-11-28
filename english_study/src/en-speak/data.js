@@ -29,19 +29,19 @@ window.SPEAK = {
     { p: "Thuật lại từng bước bạn vừa pha một ly nước hoặc cà phê.",
       en: "First, I boil some water. While I'm waiting, I grab a mug and put in two spoons of coffee. Oops, a bit too much. Never mind. The water's ready, so I pour it in slowly and stir. I add a little milk — not too much — and that's it. Hmm, it smells good. Time to sit down and enjoy it.",
       keys: ["While I'm waiting", "a bit too much", "Never mind", "that's it", "Time to"],
-      verbs: ["boil", "waiting", "grab", "put in", "mind", "pour", "stir", "add", "smells", "sit down", "enjoy"],
+      verbs: ["boil", "waiting", "grab", "put in", "mind", "pour it in", "stir", "add", "smells", "sit down", "enjoy"],
       vi: "Trước tiên, mình đun nước. Trong lúc chờ, lấy cái cốc, cho vào hai thìa cà phê. Ối, hơi nhiều. Thôi kệ. Nước sôi rồi, rót từ từ rồi khuấy. Thêm chút sữa — không nhiều quá — vậy là xong. Hừm, thơm ghê. Ngồi xuống thưởng thức thôi." },
 
     { p: "Hôm nay bạn thấy trong người thế nào? Vì sao?",
       en: "Honestly, I'm a bit tired today. I didn't sleep well last night because it was so hot. My head feels heavy and I keep yawning. But I'm not in a bad mood. I think a short walk after lunch will help. And maybe I'll go to bed early tonight — for real this time.",
       keys: ["Honestly", "didn't sleep well", "I keep", "in a bad mood", "will help", "for real this time"],
-      verbs: ["sleep", "feels", "keep", "yawning", "think", "help", "go"],
+      verbs: ["sleep", "feels", "keep yawning", "think", "help", "go"],
       vi: "Nói thật, hôm nay mình hơi mệt. Tối qua ngủ không ngon vì nóng quá. Đầu thấy nặng, ngáp liên tục. Nhưng tâm trạng không tệ. Chắc đi bộ một chút sau bữa trưa sẽ đỡ. Và có lẽ tối nay đi ngủ sớm — lần này là thật." },
 
     { p: "Kể một việc khiến bạn bực mình gần đây.",
       en: "Something that annoyed me this week? Oh, I know. I ordered a pair of shoes online, and they sent me the wrong size. So I had to pack them up, go to the post office, and wait in line for half an hour. And the new pair still hasn't arrived. What a waste of time.",
       keys: ["Oh, I know", "the wrong size", "pack them up", "wait in line", "still hasn't arrived", "What a waste of time"],
-      verbs: ["annoyed", "know", "ordered", "sent", "had to", "pack", "go", "wait", "arrived"],
+      verbs: ["annoyed", "know", "ordered", "sent", "had to", "pack them up", "go", "wait", "arrived"],
       vi: "Chuyện làm mình bực tuần này à? À, có rồi. Mình đặt một đôi giày trên mạng, họ gửi nhầm cỡ. Thế là phải đóng gói lại, ra bưu điện, xếp hàng nửa tiếng. Mà đôi mới vẫn chưa tới. Đúng là phí thời gian." },
 
     { p: "Tả con đường từ nhà tới chỗ làm hoặc chỗ học.",
@@ -161,13 +161,13 @@ window.SPEAK = {
     { p: "Tả một người bạn thân: tính cách họ ra sao.",
       en: "My best friend is one of the calmest people I know. Nothing seems to stress her out. When I panic about something, she just listens and says, “Okay, what can we do about it?” She's also really funny, but in a quiet way — she'll say one short line and everyone bursts out laughing. I'm lucky to have her.",
       keys: ["one of the calmest people I know", "stress her out", "what can we do about it", "in a quiet way", "bursts out laughing", "I'm lucky to have"],
-      verbs: ["know", "seems", "stress", "panic", "listens", "says", "do", "say", "bursts out", "laughing", "have"],
+      verbs: ["know", "seems", "stress her out", "panic", "listens", "says", "do", "say", "bursts out", "laughing", "have"],
       vi: "Bạn thân của mình là một trong những người điềm tĩnh nhất mình biết. Có vẻ chẳng gì làm bạn ấy căng thẳng được. Khi mình hoảng lên vì chuyện gì, bạn ấy chỉ nghe rồi bảo: “Rồi, giờ mình làm được gì nào?” Bạn ấy cũng rất hài hước, nhưng kiểu lặng lẽ — buông đúng một câu ngắn là cả đám phá lên cười. Mình may mắn khi có bạn ấy." },
 
     { p: "Kể lại cuộc trò chuyện gần nhất bạn có.",
       en: "The last conversation I had was with a guy at the repair shop. I told him my laptop was making a strange noise. He asked how long it had been doing that, and I said about a week. He opened it up and said the fan was full of dust. He cleaned it in ten minutes and didn't even charge me. Nice guy.",
       keys: ["The last conversation I had", "I told him", "making a strange noise", "how long it had been", "full of dust", "didn't even charge me"],
-      verbs: ["had#1", "told", "making", "asked", "doing", "said", "opened", "cleaned", "charge"],
+      verbs: ["had#1", "told", "making", "asked", "doing", "said", "opened it up", "cleaned", "charge"],
       vi: "Cuộc nói chuyện gần nhất của mình là với anh thợ ở tiệm sửa máy. Mình kể laptop đang kêu tiếng lạ. Anh hỏi bị vậy bao lâu rồi, mình bảo khoảng một tuần. Anh mở ra rồi bảo quạt đầy bụi. Anh vệ sinh mất mười phút, còn không lấy tiền. Tốt bụng ghê." },
 
     { p: "Điều gì làm bạn cười gần đây?",

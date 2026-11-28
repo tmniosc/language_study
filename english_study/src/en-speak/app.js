@@ -7,16 +7,20 @@
   const $ = (s, r=document) => r.querySelector(s);
   const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 
-  // Đánh dấu câu theo từng ký tự rồi gom thành đoạn:
-  //   keys  -> khối chốt (gạch chân), lấy lần xuất hiện đầu của mỗi khối;
-  //   verbs -> động từ (nền trắng chữ đen), khớp nguyên từ, mọi lần xuất hiện;
+  // Tô nền trắng nguyên cụm, không tô một phần:
+  //   keys  -> khối / thành ngữ, lấy lần xuất hiện đầu của mỗi khối;
+  //   verbs -> động từ và cụm động từ, khớp nguyên từ, mọi lần xuất hiện;
   //            "từ#n" chỉ lấy lần thứ n (vd. "like#3" khi hai chữ like trước là giới từ).
+  // Hai thứ gộp chung: động từ nằm trong khối thì cả khối được tô. Hai chỗ tô chỉ cách nhau
+  // một dấu cách, " to " hay " me " cũng nối làm một (ended up scrolling, need to reply,
+  // let me check) để cụm động từ không bị cắt khúc.
+  const BRIDGE = /^(?: | to | me )$/i;
   function hl(en, keys, verbs){
-    const n = en.length, ck = new Uint8Array(n), vb = new Uint8Array(n);
+    const n = en.length, on = new Uint8Array(n);
     const low = en.toLowerCase();
     [].concat(keys || []).forEach(k => {
       const i = low.indexOf(String(k).toLowerCase());
-      if(i >= 0) ck.fill(1, i, i + k.length);
+      if(i >= 0) on.fill(1, i, i + k.length);
     });
     [].concat(verbs || []).forEach(v => {
       const [w, nth] = String(v).split("#");
@@ -24,15 +28,22 @@
       let m, k = 0;
       while((m = re.exec(en))){
         k++;
-        if(!nth || k === +nth) vb.fill(1, m.index, m.index + m[0].length);
+        if(!nth || k === +nth) on.fill(1, m.index, m.index + m[0].length);
       }
     });
+    // nối các khe ngắn giữa hai chỗ tô
+    for(let i = 1; i < n; i++){
+      if(on[i] || !on[i-1]) continue;
+      let j = i;
+      while(j < n && !on[j]) j++;
+      if(j < n && BRIDGE.test(en.slice(i, j))) on.fill(1, i, j);
+      i = j;
+    }
     let out = "", i = 0;
     while(i < n){
       let j = i;
-      while(j < n && ck[j] === ck[i] && vb[j] === vb[i]) j++;
-      const cls = (ck[i] ? "ck" : "") + (vb[i] ? (ck[i] ? " vb" : "vb") : "");
-      out += cls ? '<span class="' + cls + '">' + esc(en.slice(i, j)) + '</span>' : esc(en.slice(i, j));
+      while(j < n && on[j] === on[i]) j++;
+      out += on[i] ? '<span class="vb">' + esc(en.slice(i, j)) + '</span>' : esc(en.slice(i, j));
       i = j;
     }
     return out;
