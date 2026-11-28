@@ -55,7 +55,7 @@
     bank.innerHTML = SP.intents.map(it =>
       '<li><details><summary>' + esc(it.vi) + '</summary>' +
         '<ul class="ens" lang="en">' +
-          it.models.map(m => '<li>' + hl(m.en, m.key) + '</li>').join("") +
+          it.models.map(m => '<li>' + hl(m.en, m.key, m.verbs) + '</li>').join("") +
         '</ul>' +
       '</details></li>'
     ).join("");

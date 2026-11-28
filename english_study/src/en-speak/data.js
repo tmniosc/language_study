@@ -204,113 +204,113 @@ window.SPEAK = {
   // --- Diễn đạt Ý: có ý muốn nói -> với lấy khối có sẵn, không ráp từng từ ---
   intents: [
     { vi: "Từ chối một lời mời mà vẫn giữ quan hệ tốt", models: [
-      { en: "I'd love to, but I can't make it this time.", key: "I'd love to, but" },
-      { en: "That sounds great — unfortunately I'm tied up that day.", key: "I'm tied up" },
-      { en: "Can I take a rain check?", key: "take a rain check" }
+      { en: "I'd love to, but I can't make it this time.", key: "I'd love to, but", verbs: ["love", "make it"] },
+      { en: "That sounds great — unfortunately I'm tied up that day.", key: "I'm tied up", verbs: ["sounds", "tied up"] },
+      { en: "Can I take a rain check?", key: "take a rain check", verbs: ["take"] }
     ]},
     { vi: "Chưa nghe rõ, muốn người ta nói lại", models: [
-      { en: "Sorry, could you say that again?", key: "could you say that again" },
-      { en: "I didn't quite catch that.", key: "didn't quite catch that" },
-      { en: "What do you mean by that?", key: "what do you mean by" }
+      { en: "Sorry, could you say that again?", key: "could you say that again", verbs: ["say"] },
+      { en: "I didn't quite catch that.", key: "didn't quite catch that", verbs: ["catch"] },
+      { en: "What do you mean by that?", key: "what do you mean by", verbs: ["mean"] }
     ]},
     { vi: "Cần một chút thời gian suy nghĩ trước khi trả lời", models: [
-      { en: "Let me think about it for a second.", key: "let me think about it" },
-      { en: "Give me a moment.", key: "give me a moment" },
+      { en: "Let me think about it for a second.", key: "let me think about it", verbs: ["Let", "think"] },
+      { en: "Give me a moment.", key: "give me a moment", verbs: ["Give"] },
       { en: "Hmm, that's a good question.", key: "that's a good question" }
     ]},
     { vi: "Đưa ra ý kiến nhưng không chắc chắn", models: [
-      { en: "I'm not sure, but I think it's worth a try.", key: "I'm not sure, but" },
-      { en: "If you ask me, we should wait.", key: "if you ask me" },
-      { en: "It seems to me that it's too early.", key: "it seems to me that" }
+      { en: "I'm not sure, but I think it's worth a try.", key: "I'm not sure, but", verbs: ["think"] },
+      { en: "If you ask me, we should wait.", key: "if you ask me", verbs: ["ask", "wait"] },
+      { en: "It seems to me that it's too early.", key: "it seems to me that", verbs: ["seems"] }
     ]},
     { vi: "Không đồng ý, nhưng nói cho lịch sự", models: [
-      { en: "I see your point, but I'm not sure it works here.", key: "I see your point, but" },
+      { en: "I see your point, but I'm not sure it works here.", key: "I see your point, but", verbs: ["see", "works"] },
       { en: "I'm not so sure about that.", key: "I'm not so sure about that" },
-      { en: "That's true, but on the other hand it costs more.", key: "on the other hand" }
+      { en: "That's true, but on the other hand it costs more.", key: "on the other hand", verbs: ["costs"] }
     ]},
     { vi: "Bắt đầu kể một câu chuyện", models: [
-      { en: "So, the other day something funny happened.", key: "the other day" },
-      { en: "You won't believe what happened.", key: "you won't believe what" },
-      { en: "Okay, long story short, we missed the train.", key: "long story short" }
+      { en: "So, the other day something funny happened.", key: "the other day", verbs: ["happened"] },
+      { en: "You won't believe what happened.", key: "you won't believe what", verbs: ["believe", "happened"] },
+      { en: "Okay, long story short, we missed the train.", key: "long story short", verbs: ["missed"] }
     ]},
     { vi: "Quên mất từ cần nói — đừng khựng, nói vòng", models: [
-      { en: "It's like a... you know, the thing you use to open cans.", key: "the thing you use to" },
-      { en: "I forget the word, but it's kind of like a box.", key: "it's kind of like" },
-      { en: "How do you say “tua vít” in English?", key: "how do you say" }
+      { en: "It's like a... you know, the thing you use to open cans.", key: "the thing you use to", verbs: ["know", "use", "open"] },
+      { en: "I forget the word, but it's kind of like a box.", key: "it's kind of like", verbs: ["forget"] },
+      { en: "How do you say “tua vít” in English?", key: "how do you say", verbs: ["say"] }
     ]},
     { vi: "Xin lỗi vì đến muộn", models: [
       { en: "Sorry I'm late, the traffic was terrible.", key: "sorry I'm late" },
-      { en: "I got held up at work.", key: "got held up" }
+      { en: "I got held up at work.", key: "got held up", verbs: ["got held up"] }
     ]},
     { vi: "Đồng ý một cách nhiệt tình", models: [
       { en: "Yeah, totally.", key: "totally" },
-      { en: "Sounds good to me.", key: "sounds good to me" },
+      { en: "Sounds good to me.", key: "sounds good to me", verbs: ["Sounds"] },
       { en: "I'm in.", key: "I'm in" }
     ]},
     { vi: "Hỏi xem người kia muốn gì", models: [
-      { en: "What do you feel like doing?", key: "what do you feel like" },
+      { en: "What do you feel like doing?", key: "what do you feel like", verbs: ["feel like", "doing"] },
       { en: "It's up to you.", key: "up to you" },
-      { en: "Whatever works for you.", key: "whatever works for you" }
+      { en: "Whatever works for you.", key: "whatever works for you", verbs: ["works"] }
     ]},
     { vi: "Nói là bạn đang bận, để nói sau", models: [
-      { en: "Can we talk later? I'm in the middle of something.", key: "in the middle of something" },
-      { en: "I'll get back to you.", key: "get back to you" }
+      { en: "Can we talk later? I'm in the middle of something.", key: "in the middle of something", verbs: ["talk"] },
+      { en: "I'll get back to you.", key: "get back to you", verbs: ["get back"] }
     ]},
     { vi: "Khen ai đó", models: [
-      { en: "You did a great job.", key: "did a great job" },
+      { en: "You did a great job.", key: "did a great job", verbs: ["did"] },
       { en: "I'm really impressed.", key: "really impressed" },
-      { en: "That was really well done.", key: "well done" }
+      { en: "That was really well done.", key: "well done", verbs: ["done"] }
     ]},
     { vi: "Nói rằng bạn thấy sao cũng được", models: [
-      { en: "It doesn't matter to me.", key: "doesn't matter to me" },
+      { en: "It doesn't matter to me.", key: "doesn't matter to me", verbs: ["matter"] },
       { en: "Either way is fine.", key: "either way is fine" },
-      { en: "I don't mind.", key: "I don't mind" }
+      { en: "I don't mind.", key: "I don't mind", verbs: ["mind"] }
     ]},
     { vi: "Chuyển sang chủ đề khác", models: [
-      { en: "By the way, did you finish the report?", key: "by the way" },
-      { en: "Speaking of which, I saw her yesterday.", key: "speaking of which" },
-      { en: "That reminds me, I owe you money.", key: "that reminds me" }
+      { en: "By the way, did you finish the report?", key: "by the way", verbs: ["finish"] },
+      { en: "Speaking of which, I saw her yesterday.", key: "speaking of which", verbs: ["Speaking", "saw"] },
+      { en: "That reminds me, I owe you money.", key: "that reminds me", verbs: ["reminds", "owe"] }
     ]},
     { vi: "Xác nhận là bạn đã hiểu", models: [
-      { en: "Got it.", key: "got it" },
-      { en: "That makes sense.", key: "makes sense" },
-      { en: "Oh, I see what you mean.", key: "I see what you mean" }
+      { en: "Got it.", key: "got it", verbs: ["Got"] },
+      { en: "That makes sense.", key: "makes sense", verbs: ["makes"] },
+      { en: "Oh, I see what you mean.", key: "I see what you mean", verbs: ["see", "mean"] }
     ]},
     { vi: "Rào đón trước khi nói một điều khó nghe", models: [
-      { en: "Don't take this the wrong way, but it's a bit late.", key: "take this the wrong way" },
-      { en: "To be honest, I didn't like it.", key: "to be honest" },
-      { en: "No offense, but that won't work.", key: "no offense, but" }
+      { en: "Don't take this the wrong way, but it's a bit late.", key: "take this the wrong way", verbs: ["take"] },
+      { en: "To be honest, I didn't like it.", key: "to be honest", verbs: ["like"] },
+      { en: "No offense, but that won't work.", key: "no offense, but", verbs: ["work"] }
     ]},
     { vi: "Hỏi một điều hơi tế nhị", models: [
-      { en: "Do you mind if I ask how much it cost?", key: "do you mind if I ask" },
+      { en: "Do you mind if I ask how much it cost?", key: "do you mind if I ask", verbs: ["mind", "ask", "cost"] },
       { en: "Just out of curiosity, how old are you?", key: "out of curiosity" }
     ]},
     { vi: "Kết thúc cuộc trò chuyện một cách lịch sự", models: [
-      { en: "Anyway, I should get going.", key: "I should get going" },
-      { en: "It was nice talking to you.", key: "nice talking to you" },
-      { en: "Let's catch up soon.", key: "catch up soon" }
+      { en: "Anyway, I should get going.", key: "I should get going", verbs: ["get going"] },
+      { en: "It was nice talking to you.", key: "nice talking to you", verbs: ["talking"] },
+      { en: "Let's catch up soon.", key: "catch up soon", verbs: ["catch up"] }
     ]},
     { vi: "Gần như đồng ý, còn chút băn khoăn", models: [
-      { en: "I'm leaning towards yes, but let me check first.", key: "leaning towards" },
+      { en: "I'm leaning towards yes, but let me check first.", key: "leaning towards", verbs: ["leaning", "let", "check"] },
       { en: "For the most part, yes.", key: "for the most part" }
     ]},
     { vi: "Nhờ ai đó giúp một tay", models: [
-      { en: "Could you give me a hand?", key: "give me a hand" },
-      { en: "Would you mind helping me with this?", key: "would you mind" }
+      { en: "Could you give me a hand?", key: "give me a hand", verbs: ["give"] },
+      { en: "Would you mind helping me with this?", key: "would you mind", verbs: ["mind", "helping"] }
     ]},
     { vi: "Nói thẳng là bạn không biết", models: [
-      { en: "I have no idea.", key: "no idea" },
+      { en: "I have no idea.", key: "no idea", verbs: ["have"] },
       { en: "Your guess is as good as mine.", key: "your guess is as good as mine" },
-      { en: "Beats me.", key: "beats me" }
+      { en: "Beats me.", key: "beats me", verbs: ["Beats"] }
     ]},
     { vi: "Trấn an ai đó, bảo đừng lo", models: [
-      { en: "Don't worry about it.", key: "don't worry about it" },
+      { en: "Don't worry about it.", key: "don't worry about it", verbs: ["worry"] },
       { en: "It's not a big deal.", key: "not a big deal" },
-      { en: "It happens.", key: "it happens" }
+      { en: "It happens.", key: "it happens", verbs: ["happens"] }
     ]},
     { vi: "Xin phép nói xen vào", models: [
-      { en: "Can I just say one thing?", key: "can I just say" },
-      { en: "Sorry to interrupt, but...", key: "sorry to interrupt" }
+      { en: "Can I just say one thing?", key: "can I just say", verbs: ["say"] },
+      { en: "Sorry to interrupt, but...", key: "sorry to interrupt", verbs: ["interrupt"] }
     ]}
   ]
 };
