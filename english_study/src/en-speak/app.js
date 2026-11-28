@@ -7,21 +7,35 @@
   const $ = (s, r=document) => r.querySelector(s);
   const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 
-  // Tô đậm các khối chốt trong câu: mỗi khối lấy lần xuất hiện đầu, bỏ khối chồng lên khối trước.
-  function hl(en, keys){
-    const low = en.toLowerCase(), spans = [];
+  // Đánh dấu câu theo từng ký tự rồi gom thành đoạn:
+  //   keys  -> khối chốt (gạch chân), lấy lần xuất hiện đầu của mỗi khối;
+  //   verbs -> động từ (nền trắng chữ đen), khớp nguyên từ, mọi lần xuất hiện;
+  //            "từ#n" chỉ lấy lần thứ n (vd. "like#3" khi hai chữ like trước là giới từ).
+  function hl(en, keys, verbs){
+    const n = en.length, ck = new Uint8Array(n), vb = new Uint8Array(n);
+    const low = en.toLowerCase();
     [].concat(keys || []).forEach(k => {
       const i = low.indexOf(String(k).toLowerCase());
-      if(i >= 0) spans.push([i, i + k.length]);
+      if(i >= 0) ck.fill(1, i, i + k.length);
     });
-    spans.sort((a,b) => a[0] - b[0]);
-    let out = "", at = 0;
-    spans.forEach(([s,e]) => {
-      if(s < at) return;
-      out += esc(en.slice(at, s)) + '<span class="ck">' + esc(en.slice(s, e)) + '</span>';
-      at = e;
+    [].concat(verbs || []).forEach(v => {
+      const [w, nth] = String(v).split("#");
+      const re = new RegExp("(?<![\\w’'])" + w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![\\w’'])", "gi");
+      let m, k = 0;
+      while((m = re.exec(en))){
+        k++;
+        if(!nth || k === +nth) vb.fill(1, m.index, m.index + m[0].length);
+      }
     });
-    return out + esc(en.slice(at));
+    let out = "", i = 0;
+    while(i < n){
+      let j = i;
+      while(j < n && ck[j] === ck[i] && vb[j] === vb[i]) j++;
+      const cls = (ck[i] ? "ck" : "") + (vb[i] ? (ck[i] ? " vb" : "vb") : "");
+      out += cls ? '<span class="' + cls + '">' + esc(en.slice(i, j)) + '</span>' : esc(en.slice(i, j));
+      i = j;
+    }
+    return out;
   }
 
   // Độc thoại: gợi ý -> sổ ra đoạn mẫu + nghĩa.
@@ -29,7 +43,7 @@
   if(self){
     self.innerHTML = SP.selftalk.map(s =>
       '<li><details><summary>' + esc(s.p) + '</summary>' +
-        '<div class="mono"><p class="en" lang="en">' + hl(s.en, s.keys) + '</p>' +
+        '<div class="mono"><p class="en" lang="en">' + hl(s.en, s.keys, s.verbs) + '</p>' +
         '<p class="tr">' + esc(s.vi) + '</p></div>' +
       '</details></li>'
     ).join("");
