@@ -84,10 +84,10 @@ details[open] > summary{background:var(--panel2)}
 .bank .ens li{color:var(--muted); font-size:15px; line-height:1.5}
 
 .ck{display:inline; padding:0 2px; color:var(--en); border-bottom:2px solid var(--en); font-weight:600}
-/* động từ: nền trắng chữ đen; nằm trong khối thì vẫn giữ gạch chân của khối */
+/* động từ: nền trắng chữ đen; đã tô nền thì bỏ gạch chân, kể cả khi nằm trong khối */
 .vb{background:var(--en); color:#050608; padding:0 3px; font-weight:600;
   -webkit-box-decoration-break:clone; box-decoration-break:clone}
-.ck.vb{color:#050608; box-shadow:inset 0 -2px 0 #050608}
+.ck.vb{color:#050608; border-bottom:0}
 .legend{margin:0 0 12px; color:var(--muted); font-size:13px; display:flex; flex-wrap:wrap; gap:6px 18px; align-items:center}
 .legend .vb, .legend .ck{font-size:13px}
 @media (max-width:560px){.mono{padding-left:16px}}
